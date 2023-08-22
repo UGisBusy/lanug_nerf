@@ -1,5 +1,5 @@
 """
-Template Model File
+Lanug Model File
 
 Currently this subclasses the Nerfacto model. Consider subclassing from the base Model.
 """
@@ -11,19 +11,19 @@ from nerfstudio.models.base_model import Model, ModelConfig  # for custom Model
 
 
 @dataclass
-class TemplateModelConfig(NerfactoModelConfig):
-    """Template Model Configuration.
+class LanugModelConfig(NerfactoModelConfig):
+    """Lanug Model Configuration.
 
     Add your custom model config parameters here.
     """
 
-    _target: Type = field(default_factory=lambda: TemplateModel)
+    _target: Type = field(default_factory=lambda: LanugModel)
 
 
-class TemplateModel(NerfactoModel):
-    """Template Model."""
+class LanugModel(NerfactoModel):
+    """Lanug Model."""
 
-    config: TemplateModelConfig
+    config: LanugModelConfig
 
     def populate_modules(self):
         super().populate_modules()

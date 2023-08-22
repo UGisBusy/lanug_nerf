@@ -1,17 +1,17 @@
 """
-Nerfstudio Template Config
+Nerfstudio lanug Config
 
 Define your custom method here that registers with Nerfstudio CLI.
 """
 
 from __future__ import annotations
 
-from ug_nerf.template_datamanager import (
-    TemplateDataManagerConfig,
+from lanug_nerf.lanug_datamanager import (
+    LanugDataManagerConfig,
 )
-from ug_nerf.template_model import TemplateModelConfig
-from ug_nerf.template_pipeline import (
-    TemplatePipelineConfig,
+from lanug_nerf.lanug_model import LanugModelConfig
+from lanug_nerf.lanug_pipeline import (
+    LanugPipelineConfig,
 )
 from nerfstudio.configs.base_config import ViewerConfig
 from nerfstudio.data.dataparsers.nerfstudio_dataparser import NerfstudioDataParserConfig
@@ -23,20 +23,20 @@ from nerfstudio.engine.trainer import TrainerConfig
 from nerfstudio.plugins.types import MethodSpecification
 
 
-method_template = MethodSpecification(
+method_lanug = MethodSpecification(
     config=TrainerConfig(
-        method_name="method-template",  # TODO: rename to your own model
+        method_name="method-lanug",  # TODO: rename to your own model
         steps_per_eval_batch=500,
         steps_per_save=2000,
         max_num_iterations=30000,
         mixed_precision=True,
-        pipeline=TemplatePipelineConfig(
-            datamanager=TemplateDataManagerConfig(
+        pipeline=LanugPipelineConfig(
+            datamanager=LanugDataManagerConfig(
                 dataparser=NerfstudioDataParserConfig(),
                 train_num_rays_per_batch=4096,
                 eval_num_rays_per_batch=4096,
             ),
-            model=TemplateModelConfig(
+            model=LanugModelConfig(
                 eval_num_rays_per_chunk=1 << 15,
             ),
         ),
@@ -58,5 +58,5 @@ method_template = MethodSpecification(
         viewer=ViewerConfig(num_rays_per_chunk=1 << 15),
         vis="viewer",
     ),
-    description="Nerfstudio method template.",
+    description="Nerfstudio method lanug-nerf.",
 )

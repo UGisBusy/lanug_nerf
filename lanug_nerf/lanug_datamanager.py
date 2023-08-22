@@ -1,5 +1,5 @@
 """
-Template DataManager
+Lanug DataManager
 """
 
 from dataclasses import dataclass, field
@@ -15,27 +15,27 @@ from nerfstudio.data.datamanagers.base_datamanager import (
 
 
 @dataclass
-class TemplateDataManagerConfig(VanillaDataManagerConfig):
-    """Template DataManager Config
+class LanugDataManagerConfig(VanillaDataManagerConfig):
+    """Lanug DataManager Config
 
     Add your custom datamanager config parameters here.
     """
 
-    _target: Type = field(default_factory=lambda: TemplateDataManager)
+    _target: Type = field(default_factory=lambda: LanugDataManager)
 
 
-class TemplateDataManager(VanillaDataManager):
-    """Template DataManager
+class LanugDataManager(VanillaDataManager):
+    """Lanug DataManager
 
     Args:
         config: the DataManagerConfig used to instantiate class
     """
 
-    config: TemplateDataManagerConfig
+    config: LanugDataManagerConfig
 
     def __init__(
         self,
-        config: TemplateDataManagerConfig,
+        config: LanugDataManagerConfig,
         device: Union[torch.device, str] = "cpu",
         test_mode: Literal["test", "val", "inference"] = "val",
         world_size: int = 1,

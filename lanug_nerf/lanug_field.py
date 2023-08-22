@@ -1,5 +1,5 @@
 """
-Template Nerfstudio Field
+Lanug Nerfstudio Field
 
 Currently this subclasses the NerfactoField. Consider subclassing the base Field.
 """
@@ -13,8 +13,8 @@ from nerfstudio.fields.nerfacto_field import NerfactoField  # for subclassing Ne
 from nerfstudio.fields.base_field import Field  # for custom Field
 
 
-class TemplateNerfField(NerfactoField):
-    """Template Field
+class LanugNerfField(NerfactoField):
+    """Lanug Field
 
     Args:
         aabb: parameters of scene aabb bounds
