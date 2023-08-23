@@ -1,15 +1,15 @@
 [project]
-name = "ug_nerf"
+name = "lanug_nerf"
 description = "Template repository for creating and registering new methods in nerfstudio."
 version = "0.1.0"
 
 dependencies = ["nerfstudio >= 0.3.0"] 
 
 [tool.setuptools.packages.find]
-include = ["ug_nerf*"]
+include = ["lanug_nerf*"]
 
 # register the entry point of your new method here:
 [project.entry-points.'nerfstudio.method_configs']
-ug_nerf = 'ug_nerf.template_config:method_template'
+lanug_nerf = 'lanug_nerf.lanug_config:method_lanug'
 
-# export NERFSTUDIO_METHOD_CONFIGS="ug_nerf=ug_nerf.template_config:method_template"
+# export NERFSTUDIO_METHOD_CONFIGS="lanug_nerf=lanug_nerf.template_config:method_template"
